@@ -133,12 +133,13 @@ const Styles = StyleSheet.create({
 
     Btn:{
         color:'black',
-        marginTop:410,
+        marginTop:500,
         textAlign:'center',
         backgroundColor:'green',
         padding:10,
         borderRadius:30,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        
         
         
         
