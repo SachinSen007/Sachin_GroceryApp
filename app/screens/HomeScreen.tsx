@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import {  Text, View } from "react-native";
 import SearchBar from "../Components/SearchBar";
 import HomeStyle from "./Style/HomeStyle";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,8 +9,10 @@ import LoaderView from "../UI/LoaderView";
 import CategoriesApiServices from "../services/CategoriesApiServices";
 import Constant from "../config/Constant";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
-import { getCategoriesData } from "../redux/CategoriesSlice";
+import { getCategoriesData,AllFavourites } from "../redux/CategoriesSlice";
 import CategoryFlatList from "../Components/CategoryFlatList ";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const HomeScreen = () => {
     const alldataItems = useAppSelector((state:any) => state.categories);
@@ -19,6 +21,7 @@ const HomeScreen = () => {
     const [isLoading, setLoader]:any = useState(false);
     const [allData,setAllData]:any = useState([]);
     const [selectedCategory,setSelectedCategory] = useState('Fruits')
+    const [selectedFav,setSelectedFav]= useState([]);
 
     useEffect(() => {
         getAllCategoryData();
@@ -52,6 +55,32 @@ const HomeScreen = () => {
             }
             setAllData(allCategory);
             dispatch(getCategoriesData(allCategory))
+            getFavouriteItems();
+        })
+        .catch((e) => {
+            setLoader(false)
+        });
+    }
+
+    const getFavouriteItems = async () => {
+        let user = await AsyncStorage.getItem('email');
+        const result = user?.substring(0, user.indexOf('@'));
+        console.log("RESULT", result)
+        axios.get(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/favourites/${result}.json`)
+        
+        .then((response) => {
+            const allFav:any = [];
+            for(const key in response.data){
+                const favObj = {
+                    id: key,
+                    p_id: response.data[key].p_id,
+                }
+                allFav.push(favObj)
+            }
+            setSelectedFav(allFav)
+            dispatch(AllFavourites(allFav))
+            console.log(allFav);
+            
         })
         .catch((e) => {
             setLoader(false)

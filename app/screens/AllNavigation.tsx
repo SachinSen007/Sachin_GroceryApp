@@ -11,7 +11,8 @@ import DetailScreen from './DetailScreen';
 import Color from '../constant/Color';
 import BottomTabNavigation from '../src/BottomNavigator/BottomNavigator';
 import AddToCart from './AddtoCart';
-import Payment from './Payment';
+import OrderScreen from './OrderScreen ';
+//import OrderSuccessScreen from './OrderSuccessScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -53,19 +54,26 @@ function AllNavigation ({navigation}:any) {
           }}
         /> 
 
-<Stack.Screen name='AddToCart' 
+      <Stack.Screen name='AddToCart' 
           component={AddToCart}
           options={{
             headerShown: false
           }}
         /> 
 
-<Stack.Screen name='Payment' 
-          component={Payment}
+     <Stack.Screen name='OrderScreen' 
+          component={OrderScreen}
           options={{
             headerShown: false
           }}
         /> 
+
+     {/* <Stack.Screen name='OrderSuccessScreen' 
+          component={OrderSuccessScreen}
+          options={{
+            headerShown: false
+          }}
+        />  */}
 
 {/* 
         <Stack.Screen name='DashboardScreen' 

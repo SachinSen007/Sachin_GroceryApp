@@ -1,11 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type ProductState = {
+  map: any;
   id: string;
   name: string;
   count: number;
   price: number;
   isFavourite: boolean;
+  favouriteId:string;
+  p_id:string;
 };
 
 interface CategoryState {
@@ -41,9 +44,10 @@ export const CategoriesSlice = createSlice({
         },
         addFavourite: (state: any, action: PayloadAction<ProductState>) => {
           const product = state.categories.find(
-            (p: {id: any}) => p.id === action.payload,
+            (p: {id: any}) => p.id === action.payload.p_id,
           );
           product.isFavourite = !product.isFavourite;
+          product.favouriteId = action.payload.favouriteId;
         },
 
         addToCart: (state: any, action: PayloadAction<ProductState>) => {
@@ -57,8 +61,23 @@ export const CategoriesSlice = createSlice({
                   state.categories.push(itemIndex)
                  }
          },
-    }
-})
+         AllFavourites: (state: any, action: PayloadAction<ProductState>) => {
+          const tempData:any = state.categories;
 
-export const { getCategoriesData, increment, decrement, addFavourite, addToCart} = CategoriesSlice.actions;
+          const newData = tempData.map((i:any) => {
+          const favData = action.payload.map((p:any) => {
+            if(i.id === p.p_id){
+              i.isFavourite = true
+              i.favouriteId = p.id
+            }
+          })
+          })
+          state.categories = tempData;
+         }
+     }
+
+    }
+)
+
+export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites} = CategoriesSlice.actions;
 export default CategoriesSlice.reducer;

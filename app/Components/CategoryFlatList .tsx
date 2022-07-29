@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { FlatList, View, Text, Image, StyleSheet, TouchableOpacity,Alert } from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useAppSelector, useAppDispatch } from "../redux/hook";
 import Color from "../constant/Color";
@@ -7,6 +7,9 @@ import CategoryFlatListStyle from "../screens/CategoryFlatListStyle";
 import { increment, decrement, addFavourite } from "../redux/CategoriesSlice";
 import { useNavigation } from "@react-navigation/native";
 import { color } from "react-native-reanimated";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+import CategoriesSlice from "../redux/CategoriesSlice";
 
 
 const CategoryFlatList = ({data,selectcat}:any) =>{
@@ -15,9 +18,44 @@ const CategoryFlatList = ({data,selectcat}:any) =>{
     const favouriteList = useAppSelector((state) => state.categories);
     const dispatch = useAppDispatch();
 
-    const favouriteHandler = (item:any) => {
-        dispatch(addFavourite(item.id))
-    }
+    // const favouriteHandler = (item:any) => {
+    //     dispatch(addFavourite(item.id))
+    // }
+
+
+    const deleteHandler = async (item:any) => {
+        let user = await AsyncStorage.getItem('email');
+        const result = user?.substring(0, user.indexOf('@'));
+        console.log("result",result);
+        
+        axios.delete(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/favourites/${result}/${item.favouriteId}.json`)
+        .then(res => {
+            dispatch(addFavourite({p_id: item.id, favouriteId: '' }))
+        }).catch((error) => {
+            Alert.alert("Alert!!!!","Authentication Failed");
+        })
+      }
+      
+
+    const favouriteHandler = async(item:any) => {
+        let user = await AsyncStorage.getItem('email');
+        const result = user?.substring(0, user.indexOf('@'));
+        console.log("RESULT", result);
+        axios.post(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/favourites/${result}.json`,{p_id: item.id})
+        .then(async res => {
+            console.log(res.data);
+            
+          if(res.data){
+            dispatch(addFavourite({p_id: item.id, favouriteId: res.data.name}))
+          }
+          else{
+            Alert.alert("InValid!!!!", 'usre is not addded....');
+          }
+        })
+        .catch((e:any) => {
+          Alert.alert("Authentication Failed");
+        })
+      }
 
     const detailHandler = (id:any) => {
         const product:any = favouriteList.find((p:any) => p.id === id);
@@ -45,7 +83,7 @@ const CategoryFlatList = ({data,selectcat}:any) =>{
             return(
                 <TouchableOpacity activeOpacity={0.4} onPress={() => detailHandler(item.id)}>
                 <View style={CategoryFlatListStyle.itemContainer}>
-                <MaterialCommunityIcons name={item.isFavourite ? 'heart' : 'heart-outline'} color={Color.PrimaryLigthGreen} size={24} style={{padding: 10, alignSelf: 'flex-end'}} onPress={() => {favouriteHandler(item)}}/>
+                <MaterialCommunityIcons name={item.isFavourite ? 'heart' : 'heart-outline'} color={Color.PrimaryLigthGreen} size={24} style={{padding: 10, alignSelf: 'flex-end'}} onPress={() => {item.isFavourite ? deleteHandler(item) : favouriteHandler(item)}} />
                 <Image source={{uri: item.image}} style={CategoryFlatListStyle.itemImages}/>
                 <Text style={CategoryFlatListStyle.nameText}>{item.name}</Text>
                 <Text style={CategoryFlatListStyle.unitText}>{item.units}</Text>

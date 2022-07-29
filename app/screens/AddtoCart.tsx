@@ -8,7 +8,7 @@ import { increment, decrement } from "../redux/CategoriesSlice";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
 import CategoryFlatList from '../Components/CategoryFlatList ';
 import { color } from 'react-native-reanimated';
-import Payment from './Payment';
+import OrderScreen from './OrderScreen ';
 
 const AddToCart = ({navigation}:any) => {
      const favouriteList = useAppSelector((state) => state.categories);
@@ -58,7 +58,7 @@ const AddToCart = ({navigation}:any) => {
         }}
      
      />
-           <TouchableOpacity style={Styles.continue} onPress={()=>navigation.navigate('Payment')}> 
+           <TouchableOpacity style={Styles.continue} onPress={()=>navigation.navigate('OrderScreen')}> 
          <Text style={Styles.Btn}>Continue</Text>
          </TouchableOpacity>
      </View>
