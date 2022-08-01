@@ -12,7 +12,10 @@ import Color from '../constant/Color';
 import BottomTabNavigation from '../src/BottomNavigator/BottomNavigator';
 import AddToCart from './AddtoCart';
 import OrderScreen from './OrderScreen ';
-//import OrderSuccessScreen from './OrderSuccessScreen';
+import OrderSuccessScreen from './OrderSuccessScreen';
+
+
+
 
 
 const Stack = createNativeStackNavigator();
@@ -68,12 +71,12 @@ function AllNavigation ({navigation}:any) {
           }}
         /> 
 
-     {/* <Stack.Screen name='OrderSuccessScreen' 
+     <Stack.Screen name='OrderSuccessScreen' 
           component={OrderSuccessScreen}
           options={{
             headerShown: false
           }}
-        />  */}
+        /> 
 
 {/* 
         <Stack.Screen name='DashboardScreen' 

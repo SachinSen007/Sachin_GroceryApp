@@ -13,7 +13,7 @@ type ProductState = {
 
 interface CategoryState {
   categories: Array<ProductState>;
-  //sachin
+  
 }
 
 const initialState = {

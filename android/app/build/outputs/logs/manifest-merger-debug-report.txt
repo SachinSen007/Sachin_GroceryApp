@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/sachinse
 MERGED from [:react-native-async-storage_async-storage] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_masked-view] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [:lottie-react-native] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/lottie-react-native/src/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-localization] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-localization/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -36,6 +37,7 @@ MERGED from [com.facebook.fresco:memory-type-ashmem:2.6.0] /Users/sachinsen/.gra
 MERGED from [com.facebook.fresco:imagepipeline:2.6.0] /Users/sachinsen/.gradle/caches/transforms-3/bfc2bf8314c2acd52873680536f1961c/transformed/jetified-imagepipeline-2.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] /Users/sachinsen/.gradle/caches/transforms-3/3dc9b7e282aff5ac48bdce3edd7fef27/transformed/jetified-nativeimagetranscoder-2.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] /Users/sachinsen/.gradle/caches/transforms-3/ddca7eee53fac30f90fc25672ec779af/transformed/jetified-imagepipeline-base-2.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.airbnb.android:lottie:5.1.1] /Users/sachinsen/.gradle/caches/transforms-3/e69b8a70578f578a76b1d42d42959808/transformed/jetified-lottie-5.1.1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.1.0] /Users/sachinsen/.gradle/caches/transforms-3/d66390e9f57cd03f4fe478c67b878d95/transformed/material-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/sachinsen/.gradle/caches/transforms-3/53122dfddfd0b682fe74c9823d5d0125/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /Users/sachinsen/.gradle/caches/transforms-3/61e71d52d642dd08489a9d3f7e89be30/transformed/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
@@ -100,6 +102,8 @@ uses-permission#android.permission.INTERNET
 ADDED from /Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:4:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/sachinsen/.gradle/caches/transforms-3/0fc98b11c4641f005f09c95af9e0c4a7/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:15:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] /Users/sachinsen/.gradle/caches/transforms-3/0fc98b11c4641f005f09c95af9e0c4a7/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:15:5-67
+MERGED from [:lottie-react-native] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/lottie-react-native/src/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:lottie-react-native] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/lottie-react-native/src/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
 	android:name
 		ADDED from /Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:4:22-64
 application
@@ -110,6 +114,8 @@ MERGED from [com.facebook.react:react-native:0.69.1] /Users/sachinsen/.gradle/ca
 MERGED from [com.facebook.react:react-native:0.69.1] /Users/sachinsen/.gradle/caches/transforms-3/ad1868fce16913a195c4e3d35d5c12bb/transformed/jetified-react-native-0.69.1-debug/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.3] /Users/sachinsen/.gradle/caches/transforms-3/6dfe711f64abfd21f5fa47082cc6df01/transformed/jetified-soloader-0.10.3/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.3] /Users/sachinsen/.gradle/caches/transforms-3/6dfe711f64abfd21f5fa47082cc6df01/transformed/jetified-soloader-0.10.3/AndroidManifest.xml:11:5-20
+MERGED from [com.airbnb.android:lottie:5.1.1] /Users/sachinsen/.gradle/caches/transforms-3/e69b8a70578f578a76b1d42d42959808/transformed/jetified-lottie-5.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.1.1] /Users/sachinsen/.gradle/caches/transforms-3/e69b8a70578f578a76b1d42d42959808/transformed/jetified-lottie-5.1.1/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/sachinsen/.gradle/caches/transforms-3/d66390e9f57cd03f4fe478c67b878d95/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/sachinsen/.gradle/caches/transforms-3/d66390e9f57cd03f4fe478c67b878d95/transformed/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
@@ -188,6 +194,8 @@ MERGED from [:react-native-community_masked-view] /Users/sachinsen/Documents/pro
 MERGED from [:react-native-community_masked-view] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/lottie-react-native/src/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/lottie-react-native/src/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-localization] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-localization/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -238,6 +246,8 @@ MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] /Users/sachinsen/.
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] /Users/sachinsen/.gradle/caches/transforms-3/3dc9b7e282aff5ac48bdce3edd7fef27/transformed/jetified-nativeimagetranscoder-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] /Users/sachinsen/.gradle/caches/transforms-3/ddca7eee53fac30f90fc25672ec779af/transformed/jetified-imagepipeline-base-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] /Users/sachinsen/.gradle/caches/transforms-3/ddca7eee53fac30f90fc25672ec779af/transformed/jetified-imagepipeline-base-2.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.1.1] /Users/sachinsen/.gradle/caches/transforms-3/e69b8a70578f578a76b1d42d42959808/transformed/jetified-lottie-5.1.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.1.1] /Users/sachinsen/.gradle/caches/transforms-3/e69b8a70578f578a76b1d42d42959808/transformed/jetified-lottie-5.1.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.material:material:1.1.0] /Users/sachinsen/.gradle/caches/transforms-3/d66390e9f57cd03f4fe478c67b878d95/transformed/material-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] /Users/sachinsen/.gradle/caches/transforms-3/d66390e9f57cd03f4fe478c67b878d95/transformed/material-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/sachinsen/.gradle/caches/transforms-3/53122dfddfd0b682fe74c9823d5d0125/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
