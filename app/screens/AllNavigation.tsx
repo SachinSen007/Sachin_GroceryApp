@@ -13,6 +13,7 @@ import BottomTabNavigation from '../src/BottomNavigator/BottomNavigator';
 import AddToCart from './AddtoCart';
 import OrderScreen from './OrderScreen ';
 import OrderSuccessScreen from './OrderSuccessScreen';
+import OrderHistory from './OrderHistory';
 
 
 
@@ -73,6 +74,13 @@ function AllNavigation ({navigation}:any) {
 
      <Stack.Screen name='OrderSuccessScreen' 
           component={OrderSuccessScreen}
+          options={{
+            headerShown: false
+          }}
+        /> 
+
+<Stack.Screen name='OrderHistory' 
+          component={OrderHistory}
           options={{
             headerShown: false
           }}

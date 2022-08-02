@@ -9,6 +9,7 @@ import AddToCart from "../../screens/AddtoCart";
 import Notification from "../../screens/Notification";
 import Profile from "../../screens/Profile";
 import CartScreen from "../../screens/CartScreen";
+import OrderHistory from "../../screens/OrderHistory";
 
 const Tab = createBottomTabNavigator();
 
@@ -64,7 +65,7 @@ const BottomTabNavigation = ({navigation}:any) => {
             ),
           }}
         />
-         <Tab.Screen name="Notification" component={Notification}
+         <Tab.Screen name="Notification" component={OrderHistory}
         options={{
             headerShown: false,
             tabBarLabel: '',

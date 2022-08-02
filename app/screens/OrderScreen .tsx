@@ -41,8 +41,10 @@ const OrderScreen = ({navigation}:any) => {
     const getOrder = async () => {
         let user = await AsyncStorage.getItem('email');
         const name:any = user?.substring(0, user.indexOf('@'));
+        let orderDetails = {products: data, amount: sum ,tax: tax, total:finalAmount, date: date, totalItems: total};
+
         console.log(name)
-        axios.post(`https://groceryapp-2a12e-default-rtdb.firebaseio.com//Orders/${name}.json`,data)
+        axios.post(`https://groceryapp-2a12e-default-rtdb.firebaseio.com//Orders/${name}.json`,orderDetails)
         .then(async res => {
           if(res.data){
             // console.log(res.data) 

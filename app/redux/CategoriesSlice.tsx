@@ -18,6 +18,7 @@ interface CategoryState {
 
 const initialState = {
     categories: [],
+    orders:[]
 }
 
 export const CategoriesSlice = createSlice({
@@ -62,6 +63,12 @@ export const CategoriesSlice = createSlice({
                   state.categories.push(itemIndex)
                  }
          },
+
+         getAllOrders: (state: any, action: PayloadAction<ProductState>) => {
+                        state.orders = action.payload
+         },
+
+
          AllFavourites: (state: any, action: PayloadAction<ProductState>) => {
           const tempData:any = state.categories;
 
@@ -80,5 +87,5 @@ export const CategoriesSlice = createSlice({
     }
 )
 
-export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites} = CategoriesSlice.actions;
+export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getAllOrders} = CategoriesSlice.actions;
 export default CategoriesSlice.reducer;

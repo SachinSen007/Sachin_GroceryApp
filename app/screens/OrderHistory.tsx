@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Alert, FlatList, Image, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-import OrderHistoryStyle from "./style/OrderHistoryStyle";
+import OrderHistoryStyle from "./Style/ OrderHistoryStyle";
 import { useNavigation } from "@react-navigation/native";
 import { getAllOrders } from "../redux/CategoriesSlice";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
@@ -14,7 +14,9 @@ const OrderHistory = () => {
     const [orderData, setOrderData]:any = useState([]);
     const  navigation:any = useNavigation();
     const dispatch = useAppDispatch();
-    const orderDetails = useAppSelector((state:any) => state.category.orders);
+    const orderDetails = useAppSelector((state:any) => state.orders);
+    console.log(orderData);
+    
 
     useEffect(() => {
         getAllOrderSummary();
@@ -23,10 +25,11 @@ const OrderHistory = () => {
     const getAllOrderSummary = async () => {
         let user = await AsyncStorage.getItem('email');
         const result = user?.substring(0, user.indexOf('@'));
-        axios.get(`https://grocery-app-6760b-default-rtdb.firebaseio.com/Orders/${result}.json`)
+        axios.get(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/Orders/${result}.json`)
         
         .then((response) => {
             const allData:any = [];
+            
             for(const key in response.data){
                 const orderObj:any = {
                     id: key,

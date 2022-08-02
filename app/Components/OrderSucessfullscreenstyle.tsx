@@ -21,7 +21,7 @@ const OrderSuccessScreenStyle = StyleSheet.create({
         borderBottomRightRadius:200,
         //elevation:30
       },
-      imageContainer:{
+      lottieViewStyle:{
 
         height:300,
         width:300,

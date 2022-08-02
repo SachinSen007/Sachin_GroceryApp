@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, Text, View, Image } from "react-native";
 import { useRoute } from "@react-navigation/native";
-import OrderDetailsStyle from "./style/OrderDetailsStyle";
+import OrderDetailsStyle from "./Style/OrderDetailsStyle ";
 import Color from "../constant/Color";
 
 const OrderHistoryDetailScreen = () => {
