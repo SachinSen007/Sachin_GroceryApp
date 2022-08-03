@@ -29,6 +29,8 @@ const OrderHistory = () => {
         
         .then((response) => {
             const allData:any = [];
+            console.log("powerrrrr",result);
+            
             
             for(const key in response.data){
                 const orderObj:any = {
@@ -44,6 +46,8 @@ const OrderHistory = () => {
                 }
                 allData.push(orderObj)
                 setOrderData(allData)
+                //console.log(allData);
+                
             }
             dispatch(getAllOrders(allData))
         })
@@ -61,7 +65,7 @@ const OrderHistory = () => {
         <View style={{flex: 1, top: 10}}>
         <Text style={OrderHistoryStyle.heading}>Your Order History</Text>
         <FlatList
-        data={orderDetails}
+        data={orderData}
         contentContainerStyle={{paddingBottom: 100}}
         renderItem={({item}:any) => {
             const result = item.id?.substring(1,8);

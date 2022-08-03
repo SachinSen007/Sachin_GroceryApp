@@ -16,6 +16,8 @@ const OrderScreen = ({navigation}:any) => {
         dispatch(addFavourite(item.id))
     }
 
+    
+
     const data = cart.filter((item:any) => {
         if(item.count >= 1){
             return item
@@ -37,6 +39,19 @@ const OrderScreen = ({navigation}:any) => {
     const finalAmount = sum + Percentage
 
     const totalItem = data.length
+    let date: any = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth()+1; 
+    let yyyy = date.getFullYear();
+  if(dd<10) 
+  {
+      dd='0'+dd;
+  } 
+  if(mm<10) 
+  {
+      mm='0'+mm;
+  }
+  date = dd+'/'+mm+'/'+yyyy;
 
     const getOrder = async () => {
         let user = await AsyncStorage.getItem('email');
@@ -47,7 +62,7 @@ const OrderScreen = ({navigation}:any) => {
         axios.post(`https://groceryapp-2a12e-default-rtdb.firebaseio.com//Orders/${name}.json`,orderDetails)
         .then(async res => {
           if(res.data){
-            // console.log(res.data) 
+             console.log("batmannnnn",res.data) 
             navigation.navigate('OrderSuccessScreen')
           }
           else{
@@ -58,6 +73,7 @@ const OrderScreen = ({navigation}:any) => {
           Alert.alert("Authentication Failed");
         })
       }
+      
     
         return(
         <View style={OrderScreenStyle.totalPriceView}>
