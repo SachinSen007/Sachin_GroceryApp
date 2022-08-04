@@ -6,7 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import OrderHistoryStyle from "./Style/ OrderHistoryStyle";
 import { useNavigation } from "@react-navigation/native";
-import { getAllOrders } from "../redux/CategoriesSlice";
+import { getOrders } from "../redux/CategoriesSlice";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
 
 const OrderHistory = () => {
@@ -15,7 +15,7 @@ const OrderHistory = () => {
     const  navigation:any = useNavigation();
     const dispatch = useAppDispatch();
     const orderDetails = useAppSelector((state:any) => state.orders);
-    console.log(orderData);
+    console.log("stccccccccc",orderData);
     
 
     useEffect(() => {
@@ -24,7 +24,9 @@ const OrderHistory = () => {
 
     const getAllOrderSummary = async () => {
         let user = await AsyncStorage.getItem('email');
-        const result = user?.substring(0, user.indexOf('@'));
+        const result = user?.substring(1, user.indexOf('@'));
+        console.log("fireeeeee",result);
+        
         axios.get(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/Orders/${result}.json`)
         
         .then((response) => {
@@ -45,11 +47,11 @@ const OrderHistory = () => {
                     totalItems: response.data[key].totalItems
                 }
                 allData.push(orderObj)
-                setOrderData(allData)
                 //console.log(allData);
                 
             }
-            dispatch(getAllOrders(allData))
+            setOrderData(allData)
+            dispatch(getOrders(allData))
         })
         .catch((e) => {
             Alert.alert("warning!!!!", "authentication failed....")
@@ -65,7 +67,7 @@ const OrderHistory = () => {
         <View style={{flex: 1, top: 10}}>
         <Text style={OrderHistoryStyle.heading}>Your Order History</Text>
         <FlatList
-        data={orderData}
+        data={orderDetails}
         contentContainerStyle={{paddingBottom: 100}}
         renderItem={({item}:any) => {
             const result = item.id?.substring(1,8);
@@ -106,3 +108,5 @@ const OrderHistory = () => {
 }
 
 export default OrderHistory;
+
+

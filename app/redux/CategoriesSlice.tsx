@@ -64,7 +64,7 @@ export const CategoriesSlice = createSlice({
                  }
          },
 
-         getAllOrders: (state: any, action: PayloadAction<ProductState>) => {
+         getOrders: (state: any, action: PayloadAction<ProductState>) => {
                         state.orders = action.payload
          },
 
@@ -87,5 +87,5 @@ export const CategoriesSlice = createSlice({
     }
 )
 
-export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getAllOrders} = CategoriesSlice.actions;
+export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getOrders} = CategoriesSlice.actions;
 export default CategoriesSlice.reducer;

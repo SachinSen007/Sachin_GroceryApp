@@ -14,6 +14,7 @@ import AddToCart from './AddtoCart';
 import OrderScreen from './OrderScreen ';
 import OrderSuccessScreen from './OrderSuccessScreen';
 import OrderHistory from './OrderHistory';
+import OrderHistoryDetailScreen from './OrderHistoryDetailScreen';
 
 
 
@@ -109,6 +110,16 @@ function AllNavigation ({navigation}:any) {
             ),
           }}
         />
+
+<Stack.Screen name='OrderHistoryDetailScreen' 
+          component={OrderHistoryDetailScreen}
+          options={{
+            headerLeft: () => (
+              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
+            ),
+          }}
+        />
+ 
 
          {/* <Stack.Screen name='Addtocart' 
           component={Addtocart}

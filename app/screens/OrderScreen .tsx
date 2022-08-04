@@ -55,7 +55,7 @@ const OrderScreen = ({navigation}:any) => {
 
     const getOrder = async () => {
         let user = await AsyncStorage.getItem('email');
-        const name:any = user?.substring(0, user.indexOf('@'));
+        const name:any = user?.substring(1, user.indexOf('@'));
         let orderDetails = {products: data, amount: sum ,tax: tax, total:finalAmount, date: date, totalItems: total};
 
         console.log(name)

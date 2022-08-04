@@ -79,7 +79,7 @@ const BottomTabNavigation = ({navigation}:any) => {
             headerShown: false,
             tabBarLabel: '',
             tabBarIcon: ({ color }) => (
-                <MaterialCommunityIcons name='account' color={Color.PrimaryLigthGray} size={26} style={{marginTop: 14}}/>
+                <MaterialCommunityIcons name='account' color={color} size={26} style={{marginTop: 14}}/>
             ),
           }}
         />
