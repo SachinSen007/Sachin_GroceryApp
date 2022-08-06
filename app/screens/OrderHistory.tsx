@@ -15,7 +15,7 @@ const OrderHistory = () => {
     const  navigation:any = useNavigation();
     const dispatch = useAppDispatch();
     const orderDetails = useAppSelector((state:any) => state.orders);
-    console.log("stccccccccc",orderData);
+   //console.log("stccccccccc",orderData);
     
 
     useEffect(() => {
@@ -25,13 +25,13 @@ const OrderHistory = () => {
     const getAllOrderSummary = async () => {
         let user = await AsyncStorage.getItem('email');
         const result = user?.substring(1, user.indexOf('@'));
-        console.log("fireeeeee",result);
+       //console.log("fireeeeee",result);
         
         axios.get(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/Orders/${result}.json`)
         
         .then((response) => {
             const allData:any = [];
-            console.log("powerrrrr",result);
+            //console.log("powerrrrr",result);
             
             
             for(const key in response.data){
