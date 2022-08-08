@@ -21,6 +21,8 @@ import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-image-crop-picker
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
 // react-native-localization
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 // react-native-reanimated
@@ -83,6 +85,7 @@ public class PackageList {
       new NetInfoPackage(),
       new LottiePackage(),
       new RNGestureHandlerPackage(),
+      new PickerPackage(),
       new ReactNativeLocalizationPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

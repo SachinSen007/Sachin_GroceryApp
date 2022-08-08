@@ -15,6 +15,8 @@ import OrderScreen from './OrderScreen ';
 import OrderSuccessScreen from './OrderSuccessScreen';
 import OrderHistory from './OrderHistory';
 import OrderHistoryDetailScreen from './OrderHistoryDetailScreen';
+import EditProfileScreen from './EditProfileScreen';
+import Profile from './Profile';
 
 
 
@@ -87,13 +89,7 @@ function AllNavigation ({navigation}:any) {
           }}
         /> 
 
-{/* 
-        <Stack.Screen name='DashboardScreen' 
-          component={BottomTabNavigation}
-          options={{
-            headerShown: false
-          }}
-        /> */}
+
 
         {/* <Stack.Screen name='FavouriteScreen' 
           component={FavouriteScreen}
@@ -114,6 +110,26 @@ function AllNavigation ({navigation}:any) {
 <Stack.Screen name='OrderHistoryDetailScreen' 
           component={OrderHistoryDetailScreen}
           options={{
+            headerLeft: () => (
+              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
+            ),
+          }}
+        />
+
+<Stack.Screen name='Profile' 
+          component={Profile}
+          options={{
+            
+            headerLeft: () => (
+              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
+            ),
+          }}
+        />
+
+<Stack.Screen name='EditProfileScreen' 
+          component={EditProfileScreen}
+          options={{
+            headerShown:false,
             headerLeft: () => (
               <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
             ),

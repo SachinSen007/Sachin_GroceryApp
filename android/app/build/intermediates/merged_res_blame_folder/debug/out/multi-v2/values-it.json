@@ -4,6 +4,23 @@
             "outputFile": "/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml",
             "map": [
                 {
+                    "source": "/Users/sachinsen/.gradle/caches/transforms-3/3af3388205362b3c7fd5df4c731333af/transformed/jetified-ucrop-2.2.6-native/res/values-it/values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,120,179",
+                        "endColumns": "64,58,50",
+                        "endOffsets": "115,174,225"
+                    },
+                    "to": {
+                        "startLines": "31,32,33",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "2982,3047,3106",
+                        "endColumns": "64,58,50",
+                        "endOffsets": "3042,3101,3152"
+                    }
+                },
+                {
                     "source": "/Users/sachinsen/.gradle/caches/transforms-3/53122dfddfd0b682fe74c9823d5d0125/transformed/appcompat-1.4.1/res/values-it/values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",

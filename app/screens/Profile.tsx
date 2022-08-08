@@ -1,12 +1,15 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
-import { StyleSheet, Text, View ,Image} from 'react-native'
+import { StyleSheet, Text, View ,Image, TouchableOpacity} from 'react-native'
+import EditProfileScreen from './EditProfileScreen'; 
 
 
-const Profile = () => {
+const Profile = ({navigation}:any) => {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerContent}>
+            <Text style={{color:'#006400', fontSize:20, fontWeight:'bold'}}>Profile Page</Text>
               <Image style={styles.avatar}
                 source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
 
@@ -21,27 +24,35 @@ const Profile = () => {
             <View style={styles.iconContent}>
               {/* <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/cottage.png'}}/> */}
             </View>
+            
             <View style={styles.infoContent}>
+            <TouchableOpacity activeOpacity={0.4} onPress={()=> navigation.navigate('EditProfileScreen')} >
               <Text style={styles.info}>Edit Profile</Text>
+              </TouchableOpacity>
             </View>
+            
           </View>
 
           <View style={styles.item}>
             <View style={styles.iconContent}>
               {/* <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/administrator-male.png'}}/> */}
             </View>
+            <TouchableOpacity>
             <View style={styles.infoContent}>
               <Text style={styles.info}>Notification</Text>
             </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.item}>
             <View style={styles.iconContent}>
               {/* <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/filled-like.png'}}/> */}
             </View>
+            <TouchableOpacity>
             <View style={styles.infoContent}>
               <Text style={styles.info}>Setting</Text>
             </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.item}>
@@ -63,42 +74,53 @@ const Profile = () => {
 
   const styles = StyleSheet.create({
     header:{
-      backgroundColor: "red",
+      backgroundColor: "#f0ffff",
     },
     headerContent:{
-      padding:30,
+      padding:50,
       alignItems: 'center',
     },
     avatar: {
-      width: 130,
-      height: 130,
+      width: 100,
+      height: 100,
       borderRadius: 63,
       borderWidth: 4,
       borderColor: "white",
-      marginBottom:10,
+      //marginBottom:10,
+      top:23
     },
     name:{
       fontSize:22,
       color:"#000000",
-      fontWeight:'600',
+      fontWeight:'bold',
+      top:27
+
     },
     userInfo:{
       fontSize:16,
-      color:"#778899",
-      fontWeight:'600',
+      color:"#000000",
+      fontWeight:'bold',
+      top:30
     },
     body:{
-      backgroundColor: "green",
+      backgroundColor: "#86af61",
       height:500,
       alignItems:'center',
+     //borderTopLeftRadius:100,
+      //borderTopRightRadius:100
     },
     item:{
       flexDirection : 'row',
+      alignItems:'center'
     },
     infoContent:{
-      flex:1,
-      alignItems:'flex-start',
-      paddingLeft:5
+     flex:1,
+     paddingRight:100,
+      // justifyContent:'center',
+      // alignItems:'center'
+      paddingTop:20
+     
+
     },
     iconContent:{
       flex:1,
@@ -112,9 +134,12 @@ const Profile = () => {
     },
     info:{
       fontSize:18,
-      marginTop:20,
+      marginTop:30,
       color: "black",
-      textAlign:'center'
+      fontWeight:'bold',
+      // textAlign:'center',
+      // justifyContent:'center',
+      // alignItems:'center'
       
       
     }
