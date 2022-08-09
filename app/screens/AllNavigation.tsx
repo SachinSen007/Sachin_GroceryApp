@@ -121,7 +121,7 @@ function AllNavigation ({navigation}:any) {
           options={{
             
             headerLeft: () => (
-              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
+              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} onPress={()=> navigation.navigate('HomeScreen')}/>
             ),
           }}
         />

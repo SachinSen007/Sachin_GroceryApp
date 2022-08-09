@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, TouchableOpacity,Image ,TextInput,Alert} from '
 import Modal from "react-native-modalbox";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ImagePicker from 'react-native-image-crop-picker';
+import { color } from 'react-native-reanimated';
+import { black } from 'react-native-paper/lib/typescript/styles/colors';
 
 
 const EditProfileScreen = ({navigation}:any) => {
@@ -69,7 +71,7 @@ const getModal = () =>{
     return (
         <View style={styles.Container}>
         <View style={styles.screen}>
-        <MaterialCommunityIcons name='arrow-left' size={25} style={styles.icon} onPress={() => navigation.navigate('Dashboard')} />
+        <MaterialCommunityIcons name='arrow-left' size={30} style={styles.icon} onPress={() => navigation.navigate('Profile')} />
         <Text style={styles.headertext}>Edit Profile</Text>
         </View>
         <View style={{flexDirection:'row'}}>
@@ -80,7 +82,12 @@ const getModal = () =>{
         </View>
         </View>
          <View style={styles.nameText}>
-         <TextInput placeholder='Enter Your Name' placeholderTextColor={'gray'} value={displayName} onChangeText={setdisplayName} style={styles.textinputstyle} />
+         <TextInput placeholder='Enter Your Name' 
+         placeholderTextColor={'gray'} 
+         value={displayName} 
+         onChangeText={setdisplayName} 
+         style={styles.textinputstyle}
+          />
          </View>
          <View style={styles.cityText}>
          <TextInput placeholder='Enter Your Email' value={email} placeholderTextColor={'gray'} onChangeText={setEmail} style={styles.textinputstyle} />
@@ -94,12 +101,15 @@ const getModal = () =>{
   
 const styles = StyleSheet.create({
 Container: {
-    flex: 1
+    flex: 1,
+    //backgroundColor:'red'
 },
 screen: {
-  height:110,
+  //height:110,
   padding:10,
-  flexDirection:'row'
+  flexDirection:'row',
+  bottom:45
+
 },
 headertext:{
  marginLeft:130,
@@ -107,7 +117,7 @@ headertext:{
  marginTop:50,
  color:'#006400',
  fontWeight:'bold',
- textAlign:'center'
+//textAlign:'center'
 },
 icon: {
    color:'#006400',
@@ -115,16 +125,18 @@ icon: {
 },
 img : {
     height: 100,
-    width: 100,
-    overflow:'hidden',
-    borderRadius:75,
+     width: 100,
+     overflow:'hidden',
+     borderRadius:75,
     marginLeft:150,
-    marginTop:10,
+    //marginTop:10,
     position:'absolute',
+    
+    
 },
 iconview:{
   marginLeft:210,
-  marginTop:90,
+  marginTop:75,
   //backgroundColor:'#F8D009',
   height:40,
   width:40,
@@ -181,20 +193,28 @@ iconview:{
     marginBottom:30,
   },
   nameText:{
-    marginTop:200,
-    margin:20,
-    justifyContent:'space-between',
-    borderBottomWidth:2,
-    padding:16,
-    borderColor:'gray'
+      marginTop:200,
+      marginLeft:25,
+     borderColor:'#006400',
+     borderWidth: 1,
+    marginHorizontal:15,
+    borderRadius:15,
+     
+
   },
   cityText:{
-    marginTop:10,
-    margin:20,
-    justifyContent:'space-between',
-    borderBottomWidth:2,
-    padding:16,
-    borderColor:'gray'
+    // marginTop:10,
+    // margin:20,
+    // justifyContent:'space-between',
+    // borderBottomWidth:2,
+    // padding:16,
+    // borderColor:'gray'
+    marginTop:30,
+      marginLeft:25,
+     borderColor:'#006400',
+     borderWidth: 1,
+    marginHorizontal:15,
+    borderRadius:15
   },
   textStyle1:{
     fontSize:15, 
@@ -203,11 +223,14 @@ iconview:{
   updatebtn:{
     height:40,
     backgroundColor:'#006400',
-    width:370,
+    width:360,
     borderRadius:10,
-    marginTop:40,
+    marginTop:60,
     shadowOpacity:0.5,
-    margin:10,  
+    // margin:10, 
+    // marginHorizontal:10,
+    alignSelf:'center'
+    // marginLeft:10
   },
   updatetxt:{
     color:'white',
@@ -217,7 +240,7 @@ iconview:{
     fontSize:16
   },
   textinputstyle:{
-    marginTop:6
+    //marginTop:6
   }
 });
 

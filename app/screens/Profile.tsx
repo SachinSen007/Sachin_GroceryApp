@@ -37,22 +37,26 @@ const Profile = ({navigation}:any) => {
             <View style={styles.iconContent}>
               {/* <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/administrator-male.png'}}/> */}
             </View>
-            <TouchableOpacity>
+            
             <View style={styles.infoContent}>
+            <TouchableOpacity>
               <Text style={styles.info}>Notification</Text>
-            </View>
             </TouchableOpacity>
+            </View>
+            
           </View>
 
           <View style={styles.item}>
             <View style={styles.iconContent}>
               {/* <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/filled-like.png'}}/> */}
             </View>
-            <TouchableOpacity>
+           
             <View style={styles.infoContent}>
+            <TouchableOpacity>
               <Text style={styles.info}>Setting</Text>
+              </TouchableOpacity> 
             </View>
-            </TouchableOpacity>
+            
           </View>
 
           <View style={styles.item}>
