@@ -48,7 +48,8 @@ const HomeScreen = () => {
                     price: response.data[key].price,
                     count: response.data[key].count,
                     isFavourite: response.data[key].isFavourite,
-                    categoriesname: response.data[key].categoriesname
+                    categoriesname: response.data[key].categoriesname,
+                    images: response.data[key].images
                     
                 };
                 allCategory.push(CategoryObj);

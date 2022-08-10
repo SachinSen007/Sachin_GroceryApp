@@ -8,6 +8,7 @@ import Color from "../constant/Color";
 import { increment, decrement, addFavourite ,addToCart} from "../redux/CategoriesSlice";
 import CategoryFlatListStyle from "./CategoryFlatListStyle";
 import DetailPageFlatlist from "./DetailPageFlatlist ";
+import {Slideshow} from "react-native-image-slider-show";  
  
 
 
@@ -16,7 +17,9 @@ const DetailScreen = ({navigation}:any) => {
     const favouriteList = useAppSelector((state :any) => state.categories);
     const route:any = useRoute();
     const dispatch = useAppDispatch();
-
+    const [position, setPosition] = useState(0)
+    
+    
     const name = route.params.name;
     const description = route.params.description;
     const price = route.params.price;
@@ -27,6 +30,14 @@ const DetailScreen = ({navigation}:any) => {
     const category = route.params.categoriesname;
     const images = route.params.images;
 
+    useEffect(()=>{
+        const toggle = setInterval(() => {
+          setPosition(position === images.length - 1 ? 0 : position + 1);
+        }, 3000);
+      
+        return () => clearInterval(toggle);
+      })
+
     const handleAddToCart = (id:any) => {
         dispatch(addToCart(id))
         navigation.navigate('AddToCart')
@@ -35,7 +46,16 @@ const DetailScreen = ({navigation}:any) => {
     return(
        <View style={DetailScreenStyle.screen}>
         <View>
-        <Image source={{uri: image}} style={DetailScreenStyle.headerImage}/>
+        {/* <Image source={{uri: image}} style={DetailScreenStyle.headerImage}/> */}
+        <Slideshow 
+       style={DetailScreenStyle.headerImage}
+       position={position}  
+        dataSource={[
+        { url:images[0] },
+        { url:images[1] },
+        { url:images[2] }
+    ]}/> 
+        
         </View>
         <View style={DetailScreenStyle.detailContainer}>
         <ScrollView>
@@ -69,7 +89,7 @@ const DetailScreen = ({navigation}:any) => {
         {count === 0 ? <Text style={DetailScreenStyle.totalPrice}>${price}</Text> : <Text style={DetailScreenStyle.totalPrice}>${price*count}</Text>}
         </View>
         <TouchableOpacity style={DetailScreenStyle.cartBtn} onPress={() => handleAddToCart(id)}>
-<Text style={DetailScreenStyle.cart}>Add to Cart</Text>
+         <Text style={DetailScreenStyle.cart}>Add to Cart</Text>
         </TouchableOpacity>
         </View>
         </View>

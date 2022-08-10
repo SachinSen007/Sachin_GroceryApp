@@ -119,7 +119,7 @@ function AllNavigation ({navigation}:any) {
 <Stack.Screen name='Profile' 
           component={Profile}
           options={{
-            
+            headerShown:false, 
             headerLeft: () => (
               <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} onPress={()=> navigation.navigate('HomeScreen')}/>
             ),

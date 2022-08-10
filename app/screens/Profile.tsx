@@ -1,13 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
 import { StyleSheet, Text, View ,Image, TouchableOpacity} from 'react-native'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EditProfileScreen from './EditProfileScreen'; 
+import HomeScreen from './HomeScreen';
 
 
 const Profile = ({navigation}:any) => {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
+        {/* <MaterialCommunityIcons name='arrow-left' size={30} style={styles.icon1} onPress={() => navigation.navigate('HomeScreen')} /> */}
           <View style={styles.headerContent}>
             <Text style={{color:'#006400', fontSize:20, fontWeight:'bold'}}>Profile Page</Text>
               <Image style={styles.avatar}
@@ -93,6 +96,12 @@ const Profile = ({navigation}:any) => {
       //marginBottom:10,
       top:23
     },
+
+    icon1: {
+      color:'#006400',
+      marginTop:50
+   },
+
     name:{
       fontSize:22,
       color:"#000000",
