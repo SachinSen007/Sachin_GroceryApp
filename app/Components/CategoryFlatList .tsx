@@ -60,7 +60,7 @@ const CategoryFlatList = ({data,selectcat}:any) =>{
     const detailHandler = (id:any) => {
         const product:any = favouriteList.find((p:any) => p.id === id);
         if('id' in product) {
-            navigation.navigate('DetailScreen',{name: product.name, price: product.price, description: product.descrition, units: product.units, count: product.count, image: product.image, id: product.id, categoriesname: product.categoriesname});
+            navigation.navigate('DetailScreen',{name: product.name, price: product.price, description: product.descrition, units: product.units, count: product.count, image: product.image, id: product.id, categoriesname: product.categoriesname, images:product.images});
         }
         else {
             console.log("Sachin Sen")

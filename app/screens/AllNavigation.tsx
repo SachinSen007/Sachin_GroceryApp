@@ -101,9 +101,10 @@ function AllNavigation ({navigation}:any) {
         <Stack.Screen name='DetailScreen' 
           component={DetailScreen}
           options={{
-            headerLeft: () => (
-              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
-            ),
+            headerBackTitleVisible: false,
+            headerTintColor: '#86af61',
+            headerTransparent: true,
+            title: '',
           }}
         />
 
@@ -119,20 +120,21 @@ function AllNavigation ({navigation}:any) {
 <Stack.Screen name='Profile' 
           component={Profile}
           options={{
-            headerShown:false, 
-            headerLeft: () => (
-              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} onPress={()=> navigation.navigate('HomeScreen')}/>
-            ),
+            headerBackTitleVisible: false,
+            headerTintColor: '#86af61',
+            headerTransparent: true,
+            title: '',
           }}
         />
 
 <Stack.Screen name='EditProfileScreen' 
           component={EditProfileScreen}
           options={{
-            headerShown:false,
-            headerLeft: () => (
-              <MaterialCommunityIcons name='arrow-left' color={Color.PrimaryBlack} size={24} />
-            ),
+            //headerShown:false,
+            headerBackTitleVisible: false,
+            headerTintColor: '#86af61',
+            headerTransparent: true,
+            title: '',
           }}
         />
  

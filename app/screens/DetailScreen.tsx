@@ -8,8 +8,8 @@ import Color from "../constant/Color";
 import { increment, decrement, addFavourite ,addToCart} from "../redux/CategoriesSlice";
 import CategoryFlatListStyle from "./CategoryFlatListStyle";
 import DetailPageFlatlist from "./DetailPageFlatlist ";
-import {Slideshow} from "react-native-image-slider-show";  
- 
+import Slideshow from 'react-native-image-slider-show';
+
 
 
 const DetailScreen = ({navigation}:any) => {
@@ -29,6 +29,8 @@ const DetailScreen = ({navigation}:any) => {
     const id = route.params.id;
     const category = route.params.categoriesname;
     const images = route.params.images;
+    console.log("vcxbgxghx",images);
+    
 
     useEffect(()=>{
         const toggle = setInterval(() => {

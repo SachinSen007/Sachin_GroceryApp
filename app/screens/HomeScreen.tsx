@@ -9,19 +9,23 @@ import LoaderView from "../UI/LoaderView";
 import CategoriesApiServices from "../services/CategoriesApiServices";
 import Constant from "../config/Constant";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
-import { getCategoriesData,AllFavourites } from "../redux/CategoriesSlice";
+import { getCategoriesData,AllFavourites, usersInfo } from "../redux/CategoriesSlice";
 import CategoryFlatList from "../Components/CategoryFlatList ";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const HomeScreen = () => {
+    
     const alldataItems = useAppSelector((state:any) => state.categories);
     const dispatch = useAppDispatch();
+   
+    
 
     const [isLoading, setLoader]:any = useState(false);
     const [allData,setAllData]:any = useState([]);
     const [selectedCategory,setSelectedCategory] = useState('Fruits')
     const [selectedFav,setSelectedFav]= useState([]);
+    const [user,setUser] = useState([]);
 
     useEffect(() => {
         getAllCategoryData();
@@ -39,7 +43,7 @@ const HomeScreen = () => {
 
             for(const key in response.data){
                 const CategoryObj = {
-                    
+
                     id: key,
                     description: response.data[key].description,
                     image: response.data[key].image,
@@ -54,15 +58,19 @@ const HomeScreen = () => {
                 };
                 allCategory.push(CategoryObj);
             }
+            
+            
             setAllData(allCategory);
             dispatch(getCategoriesData(allCategory))
             getFavouriteItems();
+            getUsersdata();
+        
         })
         .catch((e) => {
             setLoader(false)
         });
     }
-
+  
     const getFavouriteItems = async () => {
         let user = await AsyncStorage.getItem('email');
         const result = user?.substring(0, user.indexOf('@'));
@@ -88,6 +96,34 @@ const HomeScreen = () => {
         });
     }
 
+    const getUsersdata = async () => {
+        let user = await AsyncStorage.getItem('email');
+        const result = user?.substring(1, user.indexOf('@'));
+        console.log("RESULT", result)
+        axios.get(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/users/${result}.json`)
+        
+        .then((response) => {
+            const allInfo:any = [];
+            for(const key in response.data){
+                const favObj = {
+                    id: key,
+                    email: response.data[key].email,
+                    name: response.data[key].name,
+                    image: response.data[key].image,
+
+             }
+                allInfo.push(favObj)
+            }
+            setUser(allInfo)
+            dispatch(usersInfo(allInfo))
+            console.log();
+            
+        })
+        .catch((e) => {
+            setLoader(false)
+        });
+    }
+
     return(
         <View style={HomeStyle.screen}>
         <View style={HomeStyle.headingContainer}>
@@ -100,7 +136,7 @@ const HomeScreen = () => {
         <CategoriesIcon name='leaf' color={Color.PrimaryWhite} size={30} category='Vegetables' onPress={() => setSelectedCategory('Vegetables')}/>
         <CategoriesIcon name='bottle-soda' color={Color.PrimaryWhite} size={30} category='Milk' onPress={() => setSelectedCategory('Milk')}/>
         <CategoriesIcon name='cake' color={Color.PrimaryWhite} size={30} category='Bakery' onPress={() => setSelectedCategory('Bakery')}/>
-        <CategoriesIcon name='fish' color={Color.PrimaryWhite} size={30} category='Fish' onPress={() => setSelectedCategory('Fish')}/>
+        <CategoriesIcon name='fish' color={Color.PrimaryWhite} size={30} category='Fish' onPress={() => setSelectedCategory('SeaFood')}/>
         </View>
         <View style={HomeStyle.listTextContainer}>
         <Text style={HomeStyle.productText}>Products</Text>
@@ -117,3 +153,5 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen;
+
+

@@ -18,7 +18,8 @@ interface CategoryState {
 
 const initialState = {
     categories: [],
-    orders:[]
+    orders:[],
+    users:[]
 }
 
 export const CategoriesSlice = createSlice({
@@ -81,11 +82,15 @@ export const CategoriesSlice = createSlice({
           })
           })
           state.categories = tempData;
+         },
+
+         usersInfo:(state: any, action: PayloadAction<ProductState>) => {
+          state.users=action.payload
          }
      }
 
     }
 )
 
-export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getOrders} = CategoriesSlice.actions;
+export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getOrders, usersInfo} = CategoriesSlice.actions;
 export default CategoriesSlice.reducer;

@@ -1,12 +1,19 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
 import { StyleSheet, Text, View ,Image, TouchableOpacity} from 'react-native'
+import { useAppSelector } from '../redux/hook'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EditProfileScreen from './EditProfileScreen'; 
 import HomeScreen from './HomeScreen';
 
 
 const Profile = ({navigation}:any) => {
+  const bhavu= useAppSelector((state)=> state.users)
+  
+  const findUser:any = bhavu.find((i:any)=>{
+    return i
+  })
+  console.log("dsjdxjx",findUser);
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -16,8 +23,8 @@ const Profile = ({navigation}:any) => {
               <Image style={styles.avatar}
                 source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
 
-              <Text style={styles.name}>Sachin Sen</Text>
-              <Text style={styles.userInfo}>sachinsen30799@gmail.com</Text>
+              <Text style={styles.name}>{findUser.name}</Text>
+              <Text style={styles.userInfo}>{findUser.email}</Text>
               {/* <Text style={styles.userInfo}>Florida </Text> */}
           </View>
         </View>
@@ -29,7 +36,7 @@ const Profile = ({navigation}:any) => {
             </View>
             
             <View style={styles.infoContent}>
-            <TouchableOpacity activeOpacity={0.4} onPress={()=> navigation.navigate('EditProfileScreen')} >
+            <TouchableOpacity activeOpacity={0.4} onPress={()=> navigation.navigate('EditProfileScreen',{uInfo:findUser})} >
               <Text style={styles.info}>Edit Profile</Text>
               </TouchableOpacity>
             </View>

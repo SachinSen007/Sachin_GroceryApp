@@ -51,31 +51,7 @@ const RegisterScreen = ({navigation}:any)=>{
       return false;
     };
   
-//   const onSubmit = () => {
-//         if (validateField()) {
-//             if(!isLoading) setLoader(true);
-//             axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBliVH7L8XIR2ZYyr_CG5LX63oVtYxBN0w',
-//             {email,password}
-//             ).then(async res => {
-//                 if (res) {
-//                   navigation.navigate('Login');
-//                   setEmail('');
-//                   setPassword('');
-//                   console.log(email)
 
-
-// ;
-//                   console.log(password);
-//                 } else {
-//                   Alert.alert("UnAuthorized");
-//                 }
-//               })
-//               .catch((e: any) => {
-//                 Alert.alert('Authentication Failed',"Please Enter Valid Data");
-//                 setLoader(false);
-//               });
-//           }
-//     }
 
 
 const onSubmit = () => {
@@ -103,6 +79,28 @@ const onSubmit = () => {
         });
     }
 }
+const registerUser = async () => {
+  let user = await AsyncStorage.getItem('email');
+  const name:any = email?.substring(0, email.indexOf('@'));
+  const image = 'https://bootdey.com/img/Content/avatar/avatar6.png'
+  const userdata = {email:email, name:name, image:image}
+ 
+
+  console.log(name)
+  axios.post(`https://groceryapp-2a12e-default-rtdb.firebaseio.com/users/${name}.json`,userdata)
+  .then(async res => {
+    if(res.data){
+       console.log("batmannnnn",res.data) 
+      
+    }
+    else{
+      Alert.alert("InValid!!!!", 'usre is not addded....');
+    }
+  })
+  .catch((e:any) => {
+    Alert.alert("Authentication Failed");
+  })
+}
 
     return(
         <View style={styles.container}>
@@ -114,7 +112,10 @@ const onSubmit = () => {
             <TextInput placeholder="Email" style={styles.input1} placeholderTextColor="#000" onChangeText={onValueChanged} value={email}/>
             <TextInput placeholder="password" style={styles.input2} placeholderTextColor="#000" onChangeText={onValueChangedPassword} value={password} maxLength={8}/>
             <Text style={{marginLeft:230,marginTop:20,fontSize:15,color:'green'}}>Forgot password?</Text>
-            <TouchableOpacity  onPress={onSubmit}>
+            <TouchableOpacity  onPress={()=>{
+              onSubmit()
+              registerUser()
+            }}>
             <Text style={styles.btn}>SignUP</Text>
             </TouchableOpacity>
             <Text style={{textAlign:'center',marginTop:20,fontSize:15,color:'green' }}>Already have an account?</Text>

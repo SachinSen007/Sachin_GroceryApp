@@ -5,13 +5,23 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ImagePicker from 'react-native-image-crop-picker';
 import { color } from 'react-native-reanimated';
 import { black } from 'react-native-paper/lib/typescript/styles/colors';
+import { useRoute } from '@react-navigation/native';
 
 
 const EditProfileScreen = ({navigation}:any) => {
-const [image, setImage] = useState('https://bootdey.com/img/Content/avatar/avatar6.png');
+
+const route:any = useRoute()
+const data = route.params.uInfo;
+console.log("xgszuya",data);
+const userEmail = data.email
+const userName = data.name
+const userPhoto = data.image
+
+const [image, setImage] = useState(userPhoto);
 const [modalVisible, setModalVisible] = useState(false);
-const [displayName, setdisplayName] = useState('');
-const [email, setEmail] = useState('');
+const [displayName, setdisplayName] = useState(userName);
+const [email, setEmail] = useState(userEmail);
+
 
     const takePhotoFromCamara = () => {
     ImagePicker.openCamera({
@@ -71,7 +81,7 @@ const getModal = () =>{
     return (
         <View style={styles.Container}>
         <View style={styles.screen}>
-        <MaterialCommunityIcons name='arrow-left' size={30} style={styles.icon} onPress={() => navigation.navigate('Profile')} />
+        {/* <MaterialCommunityIcons name='arrow-left' size={30} style={styles.icon} onPress={() => navigation.navigate('Profile')} /> */}
         <Text style={styles.headertext}>Edit Profile</Text>
         </View>
         <View style={{flexDirection:'row'}}>
@@ -90,7 +100,7 @@ const getModal = () =>{
           />
          </View>
          <View style={styles.cityText}>
-         <TextInput placeholder='Enter Your Email' value={email} placeholderTextColor={'gray'} onChangeText={setEmail} style={styles.textinputstyle} />
+         <TextInput placeholder='Enter Your Email' value={email} placeholderTextColor={'gray'}  editable={false} onChangeText={setEmail} style={styles.textinputstyle} />
          </View>
          <TouchableOpacity style={styles.updatebtn} >
            <Text style={styles.updatetxt}>UPDATE</Text>
