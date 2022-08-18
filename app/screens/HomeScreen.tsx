@@ -13,6 +13,7 @@ import { getCategoriesData,AllFavourites, usersInfo } from "../redux/CategoriesS
 import CategoryFlatList from "../Components/CategoryFlatList ";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { updateUserProfileData } from "../redux/CategoriesSlice";
 
 const HomeScreen = () => {
     
@@ -112,6 +113,8 @@ const HomeScreen = () => {
                     image: response.data[key].image,
 
              }
+             console.log("sachiiiiiiiiiiiin",favObj);
+             
                 allInfo.push(favObj)
             }
             setUser(allInfo)

@@ -5,6 +5,7 @@ import { useAppSelector } from '../redux/hook'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EditProfileScreen from './EditProfileScreen'; 
 import HomeScreen from './HomeScreen';
+import Notification from './Notification';
 
 
 const Profile = ({navigation}:any) => {
@@ -21,7 +22,7 @@ const Profile = ({navigation}:any) => {
           <View style={styles.headerContent}>
             <Text style={{color:'#006400', fontSize:20, fontWeight:'bold'}}>Profile Page</Text>
               <Image style={styles.avatar}
-                source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+                source={{uri: findUser.image}}/>
 
               <Text style={styles.name}>{findUser.name}</Text>
               <Text style={styles.userInfo}>{findUser.email}</Text>
@@ -49,7 +50,7 @@ const Profile = ({navigation}:any) => {
             </View>
             
             <View style={styles.infoContent}>
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.4} onPress={()=> navigation.navigate('Notification')}>
               <Text style={styles.info}>Notification</Text>
             </TouchableOpacity>
             </View>

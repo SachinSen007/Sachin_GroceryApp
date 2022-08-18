@@ -6,6 +6,10 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { color } from 'react-native-reanimated';
 import { black } from 'react-native-paper/lib/typescript/styles/colors';
 import { useRoute } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+import { updateUserProfileData } from '../redux/CategoriesSlice';
+import { useAppDispatch } from '../redux/hook';
 
 
 const EditProfileScreen = ({navigation}:any) => {
@@ -16,11 +20,14 @@ console.log("xgszuya",data);
 const userEmail = data.email
 const userName = data.name
 const userPhoto = data.image
+const id = data.id
 
 const [image, setImage] = useState(userPhoto);
 const [modalVisible, setModalVisible] = useState(false);
 const [displayName, setdisplayName] = useState(userName);
 const [email, setEmail] = useState(userEmail);
+
+const dispatch = useAppDispatch();
 
 
     const takePhotoFromCamara = () => {
@@ -75,6 +82,25 @@ const getModal = () =>{
       );
   };
 
+  const editUserProfile = async (data: any) => {
+    let user = await AsyncStorage.getItem('email');
+    const storege = user?.substring(1, user.indexOf('@'));
+    console.log("sachiiiiiiiiiiiiiin",id);
+    
+    axios
+      .put(
+        `https://groceryapp-2a12e-default-rtdb.firebaseio.com/users/${storege}/${id}.json`,
+        {name: displayName, image: image, email: email},
+      )
+      .then(response => {
+        dispatch(updateUserProfileData({name: displayName, image: image, id: id}));
+        navigation.navigate('Profile');
+      })
+      .catch(e => {
+        Alert.alert('Opps!!!!', 'There Was an Problem with Data....');
+      });
+  };
+
 
 
 
@@ -102,7 +128,7 @@ const getModal = () =>{
          <View style={styles.cityText}>
          <TextInput placeholder='Enter Your Email' value={email} placeholderTextColor={'gray'}  editable={false} onChangeText={setEmail} style={styles.textinputstyle} />
          </View>
-         <TouchableOpacity style={styles.updatebtn} >
+         <TouchableOpacity style={styles.updatebtn} onPress={()=> editUserProfile(id)}>
            <Text style={styles.updatetxt}>UPDATE</Text>
          </TouchableOpacity>
        </View>

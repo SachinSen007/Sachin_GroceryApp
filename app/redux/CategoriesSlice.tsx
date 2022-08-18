@@ -3,12 +3,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type ProductState = {
   map: any;
   id: string;
-  name: string;
+  
   count: number;
   price: number;
   isFavourite: boolean;
   favouriteId:string;
   p_id:string;
+  name:string;
+  image:string;
 };
 
 interface CategoryState {
@@ -86,11 +88,22 @@ export const CategoriesSlice = createSlice({
 
          usersInfo:(state: any, action: PayloadAction<ProductState>) => {
           state.users=action.payload
-         }
+         },
+
+         updateUserProfileData: (state: any, action: PayloadAction<ProductState>) => {
+          const {name, image, id} = action.payload;
+          const existingUser = state.users.find(
+            (i: any) => i.id === action.payload.id,
+          );
+          if (existingUser) {
+            existingUser.name = name;
+            (existingUser.image = image), (existingUser.id = id);
+          }
+        },
      }
 
     }
 )
 
-export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getOrders, usersInfo} = CategoriesSlice.actions;
+export const { getCategoriesData, increment, decrement, addFavourite, addToCart, AllFavourites, getOrders, usersInfo,updateUserProfileData} = CategoriesSlice.actions;
 export default CategoriesSlice.reducer;

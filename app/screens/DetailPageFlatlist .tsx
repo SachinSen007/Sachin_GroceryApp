@@ -1,17 +1,32 @@
 import React from "react";
-import { FlatList, View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
+import { FlatList, View, TouchableOpacity, Image, Text, StyleSheet, Alert } from "react-native";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import DetailPageFlatlistStyle from "./Style/DetailPageFlatlistStyle";
 import Color from "../constant/Color";
 import { increment, decrement, addFavourite } from "../redux/CategoriesSlice";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
+
 
 const DetailPageFlatlist = ({selectCat, data, selectId}:any) => {
-
+    const favouriteList = useAppSelector((state) => state.categories);
     const dispatch = useAppDispatch();
+    const navigation:any = useNavigation();
+
 
     const favouriteHandler = (item:any) => {
         dispatch(addFavourite(item.id))
+    }
+    const detailHandler = (id:any) => {
+        const product:any = favouriteList.find((p:any) => p.id === id);
+        if('id' in product) {
+            navigation.navigate('DetailScreen',{name: product.name, price: product.price, description: product.descrition, units: product.units, count: product.count, image: product.image, id: product.id, categoriesname: product.categoriesname, images:product.images});
+        }
+        else {
+            console.log("Sachin Sen")
+        }
     }
     
 
@@ -30,7 +45,7 @@ const DetailPageFlatlist = ({selectCat, data, selectId}:any) => {
         showsHorizontalScrollIndicator={false}
         renderItem={({item}:any) => {
             return(
-                <TouchableOpacity activeOpacity={0.4}>
+                <TouchableOpacity activeOpacity={0.4} onPress={()=> detailHandler(item.id)}>
                 <View style={DetailPageFlatlistStyle.itemContainer}>
                 <MaterialCommunityIcons name={item.isFavourite ? 'heart' : 'heart-outline'} color={Color.PrimaryLigthGreen} size={24} style={{padding: 10, alignSelf: 'flex-end'}} onPress={() => {favouriteHandler(item)}}/>
                 <Image source={{uri: item.image}} style={DetailPageFlatlistStyle.itemImages}/>
