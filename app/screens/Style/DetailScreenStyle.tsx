@@ -60,7 +60,7 @@ const DetailScreenStyle = StyleSheet.create({
         marginTop: 14,
         marginHorizontal: 16
     },
-    description: {
+    descriptionStyle: {
         fontSize: 16,
         color: Color.PrimaryLigthGray,
         marginHorizontal: 16,

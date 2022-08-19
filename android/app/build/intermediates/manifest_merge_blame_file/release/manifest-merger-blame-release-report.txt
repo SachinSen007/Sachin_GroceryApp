@@ -1,0 +1,144 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.grocerymobileapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:5:5-64
+12-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:5:22-62
+13
+14    <uses-feature
+14-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:6:5-85
+15        android:name="android.hardware.camera"
+15-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:6:19-57
+16        android:required="false" />
+16-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:6:58-82
+17    <uses-feature
+17-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:7:4-90
+18        android:name="android.hardware.camera.front"
+18-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:7:18-62
+19        android:required="false" />
+19-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:7:63-87
+20
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+21-->[:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-79
+21-->[:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-76
+22    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+22-->[:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-76
+22-->[:react-native-community_netinfo] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-73
+23
+24    <queries>
+24-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-13:15
+25        <intent>
+25-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-12:18
+26            <action android:name="android.media.action.IMAGE_CAPTURE" />
+26-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-73
+26-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:21-70
+27        </intent>
+28    </queries>
+29
+30    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+30-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-81
+30-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:22-78
+31
+32    <application
+32-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:9:5-28:19
+33        android:name="com.grocerymobileapp.MainApplication"
+33-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:10:7-38
+34        android:allowBackup="false"
+34-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:14:7-34
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.7.0] /Users/sachinsen/.gradle/caches/transforms-3/efc5fbdc5cddabff1e6dbe6ad771c56d/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+36        android:icon="@mipmap/ic_launcher"
+36-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:12:7-41
+37        android:label="@string/app_name"
+37-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:11:7-39
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:13:7-52
+39        android:theme="@style/AppTheme" >
+39-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:15:7-38
+40        <activity
+40-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:16:7-27:18
+41            android:name="com.grocerymobileapp.MainActivity"
+41-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:17:9-37
+42            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+42-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:19:9-118
+43            android:exported="true"
+43-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:22:9-32
+44            android:label="@string/app_name"
+44-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:18:9-41
+45            android:launchMode="singleTask"
+45-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:20:9-40
+46            android:windowSoftInputMode="adjustResize" >
+46-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:21:9-51
+47            <intent-filter>
+47-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:23:9-26:25
+48                <action android:name="android.intent.action.MAIN" />
+48-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:24:13-65
+48-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:24:21-62
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:25:13-73
+50-->/Users/sachinsen/Documents/project/Sachin_GroceryApp/android/app/src/main/AndroidManifest.xml:25:23-70
+51            </intent-filter>
+52        </activity>
+53
+54        <provider
+54-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:9-26:20
+55            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+55-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-94
+56            android:authorities="com.grocerymobileapp.provider"
+56-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-60
+57            android:exported="false"
+57-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
+58            android:grantUriPermissions="true" >
+58-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-47
+59            <meta-data
+59-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:78
+60                android:name="android.support.FILE_PROVIDER_PATHS"
+60-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-67
+61                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+61-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:25:17-75
+62        </provider>
+63
+64        <activity
+64-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:28:9-30:72
+65            android:name="com.yalantis.ucrop.UCropActivity"
+65-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-60
+66            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+66-->[:react-native-image-crop-picker] /Users/sachinsen/Documents/project/Sachin_GroceryApp/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-69
+67
+68        <provider
+68-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+69            android:name="androidx.startup.InitializationProvider"
+69-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+70            android:authorities="com.grocerymobileapp.androidx-startup"
+70-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+71            android:exported="false" >
+71-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+72            <meta-data
+72-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+73                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+73-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+74                android:value="androidx.startup" />
+74-->[androidx.emoji2:emoji2:1.0.0] /Users/sachinsen/.gradle/caches/transforms-3/a491fe997c62915d8b5e27cb1c7ee888/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+75            <meta-data
+75-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/sachinsen/.gradle/caches/transforms-3/b4f96b26a07681f60e49336d55d7ad7c/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+76                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+76-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/sachinsen/.gradle/caches/transforms-3/b4f96b26a07681f60e49336d55d7ad7c/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+77                android:value="androidx.startup" />
+77-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/sachinsen/.gradle/caches/transforms-3/b4f96b26a07681f60e49336d55d7ad7c/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+78        </provider>
+79    </application>
+80
+81</manifest>

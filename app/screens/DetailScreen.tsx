@@ -78,7 +78,7 @@ const DetailScreen = ({navigation}:any) => {
         <Text style={DetailScreenStyle.price}>{price}$</Text>
         </View>
         <Text style={DetailScreenStyle.descriptionHeading}>Description</Text>
-        <Text style={DetailScreenStyle.description}>{description}</Text>
+        <Text style={DetailScreenStyle.descriptionStyle}>{description}</Text>
         <Text style={DetailScreenStyle.descriptionHeading}>Popular Products</Text>
         <DetailPageFlatlist data= {favouriteList} selectCat={category} selectId={id}/>
         </ScrollView>

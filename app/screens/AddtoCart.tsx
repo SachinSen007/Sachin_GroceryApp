@@ -25,7 +25,7 @@ const AddToCart = ({navigation}:any) => {
   
 
  return(
-    <View>
+    <View style={{flex:1}}>
      <FlatList
      data={data}
      renderItem={({item})=>{
@@ -58,9 +58,16 @@ const AddToCart = ({navigation}:any) => {
         }}
      
      />
-           <TouchableOpacity style={Styles.continue} onPress={()=>navigation.navigate('OrderScreen')}> 
+           {/* <TouchableOpacity style={Styles.continue} onPress={()=>navigation.navigate('OrderScreen')}> 
          <Text style={Styles.Btn}>Continue</Text>
-         </TouchableOpacity>
+         </TouchableOpacity> */}
+
+<View style={Styles.Continuebtn}>
+            <TouchableOpacity onPress={() => navigation.navigate('OrderScreen')}>
+            <Text style={Styles.continueText}>Continue</Text>
+            </TouchableOpacity>
+        </View>
+
      </View>
  )
 }
@@ -132,23 +139,38 @@ const Styles = StyleSheet.create({
     },
 
     Btn:{
-        color:'black',
-        marginTop:500,
-        textAlign:'center',
-        backgroundColor:'green',
-        padding:10,
-        borderRadius:30,
-        fontWeight:'bold',
-        
-        
-        
-        
-    },
+        // color:'black',
+        // marginTop:500,
+        // textAlign:'center',
+        // backgroundColor:'green',
+        // padding:10,
+        // borderRadius:30,
+        // fontWeight:'bold',
+},
 
     continue:{
         borderColor:'green',
         
-    }
+    },
+
+    Continuebtn:{
+
+        alignItems:'center',
+        marginTop:30,
+        marginBottom:10
+    },
+
+    continueText:{
+        fontSize:25,
+        fontWeight:'bold',
+        backgroundColor:Color.PrimaryLigthGreen,
+        height:50,
+        width:200,
+        borderRadius:20,
+        textAlign:'center',
+        padding:5,
+        color:Color.PrimaryWhite,
+    },
 
 
 
